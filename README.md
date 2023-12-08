@@ -1,29 +1,31 @@
-# MOVIE STREAMING APP
+# Movie Streaming Generator
 
 A final project for SI 507 at the University of Michigan.
 
 ## Requirements
 
 Required Packages: requests, flask
+
 Required API Keys: TMDb API, StreamingAvailabilityAPI (RapidAPI)
 
-TMDb API Documentation + API Key Access: https://developer.themoviedb.org/reference/intro/getting-started
-StreamingAvailabilityAPI Documentation + API Key Access: https://www.movieofthenight.com/about/api/documentation
+[TMDb API Documentation](https://developer.themoviedb.org/reference/intro/getting-started)
+
+[StreamingAvailabilityAPI Documentation](https://www.movieofthenight.com/about/api/documentation)
 
 ## Demo Videos
 
-Flask Demo Video: https://www.youtube.com/watch?v=hJH6KS2QNfw
-Command-Line Interface Demo Video: https://www.youtube.com/watch?v=RPLiwyMkaac
+[Flask Demo](https://www.youtube.com/watch?v=hJH6KS2QNfw)
+
+[Command-Line Interface Demo](https://www.youtube.com/watch?v=RPLiwyMkaac)
 
 ## Instructions (Flask)
 
-1. Register for API keys from TMDb API and StreamingAvailabilityAPI (RapidAPI)
-2. Define API keys in app.py
-3. Install Flask using pip install Flask
-4. Launch Flask site by running python3 app.py
-5. Select preferences from service, genre, language, and duration dropdowns, then click "Search"
-6. Browse list of movie results, then click on "Get Streaming Link" for a desired film
-7. You will be redirected to the streaming link on your requested platform, if available, or taken to a "Streaming Link Not Available" page prompting you to return to the list of search results
+1. Register for API keys from **TMDb API** and **StreamingAvailabilityAPI (RapidAPI)**
+2. Define API keys in **app.py**
+3. Install Flask using **pip install Flask**
+4. Launch Flask site by running **python3 app.py**
+5. Select preferences from service, genre, language, and duration dropdowns, then click **Search**
+6. Browse list of movie results, then click **Get Streaming Link** to be redirected to the viewing link for a chosen film
 
 ## Overview
 
