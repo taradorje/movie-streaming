@@ -1,0 +1,143 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.unavailable {
+  text-align: center;
+}
+
+.unavailable p {
+  margin: 20px;
+}
+
+h1,
+form {
+  text-align: center;
+}
+
+h1 {
+  margin: 20px;
+}
+
+.no-results {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.no-results img {
+  height: 200px;
+}
+
+.search {
+  text-align: left;
+  margin-left: 30px;
+}
+
+.return-button {
+  margin-left: 10px;
+}
+
+button {
+  font-size: 12px;
+}
+
+input {
+  font-size: 20px;
+}
+
+a {
+  margin: 20px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 100%;
+  justify-content: flex-start;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20%;
+}
+
+.results {
+  width: 80%;
+  overflow-y: auto;
+  align-content: right;
+}
+
+.result-button {
+  display: flex;
+}
+
+ul {
+  margin-top: 20px;
+  list-style-type: none;
+}
+
+h2 {
+  font-size: 32px;
+  margin-top: 0px;
+}
+
+li {
+  margin-bottom: 25px;
+}
+
+.result-container {
+  display: flex;
+  margin-bottom: 25px;
+  margin-right: 20px;
+}
+
+p {
+  margin-top: 0;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+body > div > div.results > ul > li > div > div > p:nth-child(6) {
+  margin-bottom: 5px;
+}
+
+form input,
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0.5px solid #1e618d; /* Border color */
+  color: #ffffff; /* Text color */
+  background-color: rgba(14, 88, 149, 0.855); /* Background color */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: #123d5a; /* Darker background color on hover */
+    color: #ffffff; /* Text color on hover */
+  }
+}
+
+.streaming-button {
+  border: 0.5px solid #1e618d; /* Border color */
+  background-color: #438fcdda; /* Background color */
+  &:hover {
+    background-color: #123d5a; /* Darker background color on hover */
+    color: #ffffff; /* Text color on hover */
+  }
+}
+
+.info {
+  width: 75%;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/app.css') }}"
+    />
+    <title>Movie Streaming Generator</title>
+  </head>
+  <body>
+    <h1>Welcome to the Movie Streaming Generator</h1>
+    <form action="/search" method="post">
+      <label for="service"
+        >Select your preferred <em><strong>streaming service</strong></em
+        >:</label
+      >
+      <select name="service" id="service">
+        {% for service in services %}
+        <option value="{{ service }}">{{ service }}</option>
+        {% endfor %}
+      </select>
+      <br />
+      <br />
+      <label for="genre"
+        >Select your preferred <em><strong>genre</strong></em
+        >:</label
+      >
+      <select name="genre" id="genre">
+        {% for genre in genres %}
+        <option value="{{ genre }}">{{ genre }}</option>
+        {% endfor %}
+      </select>
+      <br />
+      <br />
+      <label for="language"
+        >Select your preferred <em><strong>language</strong></em
+        >:</label
+      >
+      <select name="language" id="language">
+        {% for language in languages %}
+        <option value="{{ language }}">{{ language }}</option>
+        {% endfor %}
+      </select>
+      <br />
+      <br />
+      <label for="duration"
+        >Select your preferred <em><strong>duration</strong></em
+        >:</label
+      >
+      <select name="duration" id="duration">
+        {% for duration in durations %}
+        <option value="{{ duration }}">{{ duration }}</option>
+        {% endfor %}
+      </select>
+      <br />
+      <br />
+      <input type="submit" value="Search" />
+    </form>
+  </body>
+</html>

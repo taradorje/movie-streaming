@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/app.css') }}"
+    />
+    <title>Search Results</title>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="sidebar">
+        <h1 class="search">Search Results</h1>
+        <a href="{{ url_for('index') }}">
+          <button class="return-button">Return to Home Page</button>
+        </a>
+      </div>
+      <div class="results">
+        {% if results %}
+        <ul>
+          {% for result in results %}
+          <li>
+            <h2>{{ result.title }}</h2>
+            <div class="result-container">
+              <img src="{{ result.poster_path }}" alt="poster" height="200px" />
+              <div class="info">
+                <p><strong>Director(s)</strong>: {{ result.directors }}</p>
+                <p><strong>Runtime</strong>: {{ result.runtime }} min.</p>
+                <p><strong>Genre</strong>: {{ result.genre }}</p>
+                <p><strong>Language</strong>: {{ result.language }}</p>
+                <p><strong>Service</strong>: {{ result.service }}</p>
+                {% if result.poster_path %} {% endif %}
+                <p><strong>Overview</strong>: {{ result.overview }}</p>
+              </div>
+              <div class="result-button">
+                <form
+                  action="{{ url_for('open_streaming_link') }}"
+                  method="post"
+                >
+                  <input
+                    type="hidden"
+                    name="tmdb_id"
+                    value="{{ result.tmdb_id }}"
+                  />
+                  <input
+                    type="hidden"
+                    name="service"
+                    value="{{ result.service }}"
+                  />
+                  <button type="submit" class="streaming-button">
+                    Get Streaming Link
+                  </button>
+                </form>
+              </div>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <div class="no-results">
+          <img
+            src="https://freepngimg.com/download/emoji/81194-angle-media-question-mark-text-social-emoji.png"
+          />
+          <h3>No films matching your criteria available.</h3>
+          <p>Please return to Home Page to search again.</p>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>

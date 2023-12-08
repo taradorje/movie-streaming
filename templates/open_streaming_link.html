@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/app.css') }}"
+    />
+    <title>Streaming Link</title>
+  </head>
+  <body class="unavailable">
+    {% if streaming_link and streaming_link !="Streaming link not available." %}
+    <script>
+      window.location.href = "{{ streaming_link }}";
+    </script>
+    {% else %}
+    <h1>Streaming Link Not Available</h1>
+    <p>
+      We're sorry, but the streaming link for this movie is not available at the
+      moment.
+    </p>
+    <a href="#" onclick="goBack(); return false;"
+      ><button>Return to Search Results</button></a
+    >
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+    </script>
+    {% endif %}
+  </body>
+</html>
