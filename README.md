@@ -8,9 +8,9 @@ Required Packages: requests, flask
 
 Required API Keys: TMDb API, StreamingAvailabilityAPI (RapidAPI)
 
-[TMDb API Documentation](https://developer.themoviedb.org/reference/intro/getting-started)
+[TMDb API Documentation + API Key Access](https://developer.themoviedb.org/reference/intro/getting-started)
 
-[StreamingAvailabilityAPI Documentation](https://www.movieofthenight.com/about/api/documentation)
+[StreamingAvailabilityAPI Documentation + API Key Access](https://www.movieofthenight.com/about/api/documentation)
 
 ## Demo Videos
 
@@ -25,11 +25,15 @@ Required API Keys: TMDb API, StreamingAvailabilityAPI (RapidAPI)
 3. Install Flask using **pip install Flask**
 4. Launch Flask site by running **python3 app.py**
 5. Select preferences from service, genre, language, and duration dropdowns, then click **Search**
-6. Browse list of movie results, then click **Get Streaming Link** to be redirected to the viewing link for a chosen film
+6. Browse list of results, then click **Get Streaming Link** to be redirected to viewing link for chosen film
 
 ## Overview
 
-A program that asks users to specify movie criteria, including genre, language, duration, and preferred streaming platform. The program then searches for movies that fit their specified criteria by accessing movie data from the TMDb API and returning the appropriate results. From there, users can make a selection from the list of available movies, which are displayed with relevant details such as Title, Director(s), Runtime, Overview, etc., as well as a poster image. Once a user makes a selection from the list of returned films by clicking on the "Get Streaming Link" button, the program accesses additional streaming data from the StreamingAvailabilityAPI, which directly links users to the appropriate movie page on their selected streaming platform. If there are any gaps in StreamingAvailabilityAPI's data, users are directed to a "Streaming Link Not Available" page that prompts them to return to their search results and make a new selection. Caching is implemented to store raw JSON results from both APIs, reducing the need for repeated requests and improving overall program efficiency. Since the TMDb Discover endpoint alone does not provide certain key movie information such as Director(s) and also requires input of set TMDb Genre, Language, and Watch Provider IDs (as opposed to name strings), the program requires accessing the TMDb Details, Credits, Genres, Languages, and Watch Providers endpoints to retrieve all necessary information.
+A program that asks users to specify movie criteria, including genre, language, duration, and preferred streaming platform. The program then searches for movies that fit their specified criteria by accessing movie data from the TMDb API and returning the appropriate results. From there, users can make a selection from the list of available movies, which are displayed with relevant details such as Title, Director(s), Runtime, Overview, etc., as well as a poster image.
+
+Once a user makes a selection from the list of returned films by clicking on the "Get Streaming Link" button, the program accesses additional streaming data from the StreamingAvailabilityAPI, which directly links users to the appropriate movie page on their selected streaming platform. If there are any gaps in StreamingAvailabilityAPI's data, users are directed to a "Streaming Link Not Available" page that prompts them to return to their search results and make a new selection.
+
+Caching is implemented to store raw JSON results from both APIs, reducing the need for repeated requests and improving overall program efficiency. Since the TMDb Discover endpoint alone does not provide certain key movie information such as Director(s) and also requires input of set TMDb Genre, Language, and Watch Provider IDs (as opposed to name strings), the program requires accessing the TMDb Details, Credits, Genres, Languages, and Watch Providers endpoints to retrieve all necessary information.
 
 ## Data Structure
 
